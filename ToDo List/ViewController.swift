@@ -9,7 +9,7 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    let a: String = "This is a Test"
+    let a: String = "This is a super "
 
     override func viewDidLoad() {
         super.viewDidLoad()
