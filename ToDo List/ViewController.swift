@@ -61,6 +61,7 @@ extension ViewController: UITableViewDelegate {
         tableView.deselectRow(at: indexPath, animated: true)
 
         let item = data[indexPath.row]
+        
         guard let vc = storyboard?.instantiateViewController(withIdentifier: "view") as? ViewViewController else {
             return
         }
