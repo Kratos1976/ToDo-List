@@ -13,13 +13,14 @@ class ViewViewController: UIViewController {
     public var deletionHandler: (() -> Void)?
 
     @IBOutlet var itemLabel: UILabel!
-    @IBOutlet var dataLabel: UILabel!
+    @IBOutlet var dateLabel: UILabel!
 
-    static let dateFormater: DateFormatter = {
+    private let realm = try! Realm()
+
+    static let dateFormatter: DateFormatter = {
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .medium
         return dateFormatter
-
     }()
 
     override func viewDidLoad() {
@@ -32,10 +33,16 @@ class ViewViewController: UIViewController {
     }
 
     @objc private func didTapDelete() {
-        guard let item = self.item else {
+        guard let myItem = self.item else {
             return
         }
 
+        realm.beginWrite()
+        realm.delete(myItem)
+        try! realm.commitWrite()
+
+        deletionHandler?()
+        navigationController?.popToRootViewController(animated: true)
 
 
 

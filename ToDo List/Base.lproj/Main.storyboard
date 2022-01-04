@@ -61,7 +61,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="TdG-5j-uvh">
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="TdG-5j-uvh">
                                 <rect key="frame" x="0.0" y="161" width="414" height="701"/>
                             </datePicker>
                         </subviews>
@@ -86,16 +86,48 @@
             </objects>
             <point key="canvasLocation" x="2396" y="116"/>
         </scene>
-        <!--View Controller-->
+        <!--View View Controller-->
         <scene sceneID="Wt8-Qs-Z3F">
             <objects>
-                <viewController id="fNx-Ef-4tX" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="zlB-AG-8KI">
+                <viewController storyboardIdentifier="view" id="fNx-Ef-4tX" customClass="ViewViewController" customModule="ToDo_List" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" restorationIdentifier="view" id="zlB-AG-8KI">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qTN-Zj-Z4n">
+                                <rect key="frame" x="20" y="64" width="374" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="NSa-Gn-Vgx"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AHA-8X-WNU">
+                                <rect key="frame" x="20" y="154" width="374" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="XVD-Ie-gGM"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="wui-On-n1h"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="qTN-Zj-Z4n" firstAttribute="leading" secondItem="wui-On-n1h" secondAttribute="leading" constant="20" id="5Pk-ay-zFk"/>
+                            <constraint firstItem="wui-On-n1h" firstAttribute="trailing" secondItem="qTN-Zj-Z4n" secondAttribute="trailing" constant="20" id="9HA-fH-p4r"/>
+                            <constraint firstItem="qTN-Zj-Z4n" firstAttribute="top" secondItem="wui-On-n1h" secondAttribute="top" constant="20" id="Z3f-Xd-Mwg"/>
+                            <constraint firstItem="AHA-8X-WNU" firstAttribute="top" secondItem="qTN-Zj-Z4n" secondAttribute="bottom" constant="20" id="eKh-kx-lzt"/>
+                            <constraint firstItem="wui-On-n1h" firstAttribute="trailing" secondItem="AHA-8X-WNU" secondAttribute="trailing" constant="20" id="gOF-05-RM6"/>
+                            <constraint firstItem="AHA-8X-WNU" firstAttribute="leading" secondItem="wui-On-n1h" secondAttribute="leading" constant="20" id="qCj-hZ-j4E"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="dateLabel" destination="AHA-8X-WNU" id="GiN-h9-iPM"/>
+                        <outlet property="itemLabel" destination="qTN-Zj-Z4n" id="Bwt-37-TFy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vW2-qH-Ea9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
